@@ -56,6 +56,39 @@ git --version
 
 Wenn eine Versionsnummer erscheint, ist Git korrekt installiert.
 
+## ⚠️ Ergänzung: 🔹 Git ohne Adminrechte (Pool-PCs)
+
+Falls keine Installation möglich ist:
+
+### Option 1: Portable Git (empfohlen)
+
+1. Download: https://git-scm.com/download/win  
+2. ZIP-Datei entpacken, z. B. nach:
+
+    C:\Users\Schueler\Tools\Git
+
+3. VS Code öffnen  
+4. Test im Terminal:
+
+    git --version
+
+Falls Git nicht erkannt wird, kann es direkt gestartet werden über:
+
+    ...\Git\cmd\git.exe
+
+### Option 2: GitHub-Weboberfläche (Notlösung)
+
+Falls Git lokal nicht funktioniert:
+
+- Dateien direkt im Browser bearbeiten  
+- Änderungen committen  
+- Pull Request erstellen  
+
+⚠️ Einschränkung:  
+- kein lokales Arbeiten mit Git möglich  
+- nur eingeschränkt für die Übung geeignet
+
+---
 ## 2. Benötigte VS-Code-Erweiterungen installieren
 
 Öffne in VS Code links den Bereich **Extensions / Erweiterungen** oder drücke:
