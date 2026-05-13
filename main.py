@@ -15,21 +15,22 @@ from umfang import berechne_umfang
 from flaecheninhalt import berechne_flaecheninhalt
 from volumen import berechne_volumen
 
-
 def main():
-    radius = float(input("Bitte Radius eingeben: "))
+    try:
+        radius = float(input("Bitte Radius eingeben: "))
 
-    umfang = berechne_umfang(radius)
-    flaeche = berechne_flaecheninhalt(radius)
-    volumen = berechne_volumen(radius)
+        umfang = berechne_umfang(radius)
+        flaeche = berechne_flaecheninhalt(radius)
+        volumen = berechne_volumen(radius)
 
-    print()
-    print("--- Ergebnis ---")
-    print(f"Radius: {radius}")
-    print(f"Umfang des Kreises: {umfang}")
-    print(f"Flächeninhalt des Kreises: {flaeche}")
-    print(f"Volumen der Kugel: {volumen}")
-
+        print()
+        print("--- Ergebnis ---")
+        print(f"Radius: {radius}")
+        print(f"Umfang des Kreises: {umfang}")
+        print(f"Flächeninhalt des Kreises: {flaeche}")
+        print(f"Volumen der Kugel: {volumen}")
+    except ValueError:
+        print("Hier ist was schief gelaufen ;-)\nBitte eine Zahl eingeben.") 
 
 if __name__ == "__main__":
     main()
