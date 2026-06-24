@@ -509,11 +509,9 @@ Mit einem Parser kann man zum Beispiel:
 - neue XML-Dateien erzeugen,
 - XML gegen ein Schema prüfen.
 
----
+### 8.2 Parser-Arten im Vergleich
 
-## 9. Parser-Arten im Vergleich
-
-### 9.1 DOM-Parser
+#### 8.2.1 DOM-Parser
 
 DOM steht für **Document Object Model**.
 
@@ -538,7 +536,7 @@ kleine Konfigurationsdateien
 XML-Dateien, die vollständig bearbeitet werden sollen
 ```
 
-### 9.2 SAX-Parser
+#### 8.2.2 SAX-Parser
 
 SAX steht für **Simple API for XML**.
 
@@ -567,7 +565,7 @@ Streaming-Verarbeitung
 Importprozesse mit vielen Datensätzen
 ```
 
-### 9.3 Pull-Parser
+#### 8.2.3 Pull-Parser
 
 Ein Pull-Parser liest XML ebenfalls schrittweise. Der Unterschied zu SAX besteht darin, dass das Programm aktiv das nächste Ereignis abruft.
 
@@ -582,7 +580,7 @@ Nachteile:
 - etwas anspruchsvoller als DOM,
 - mehr Programmierlogik erforderlich.
 
-### 9.4 ElementTree in Python
+#### 8.2.4 ElementTree in Python
 
 Python bringt mit `xml.etree.ElementTree` bereits eine XML-Bibliothek mit.
 
@@ -598,7 +596,7 @@ Typische Möglichkeiten:
 
 Für den Einstieg ist `ElementTree` eine sehr gute Wahl.
 
-### 9.5 lxml
+#### 8.2.5 lxml
 
 `lxml` ist eine externe Python-Bibliothek. Sie ist leistungsfähiger als `ElementTree`, muss aber zusätzlich installiert werden.
 
@@ -620,9 +618,7 @@ Nachteile:
 - zusätzliche Installation erforderlich,
 - für Anfänger etwas komplexer.
 
----
-
-## 10. Vergleich wichtiger Parser in Python
+### 8.3 Vergleich wichtiger Parser in Python
 
 | Parser / Bibliothek | Art | Vorteil | Nachteil | Geeignet für |
 |---|---|---|---|---|
@@ -642,9 +638,9 @@ Für fortgeschrittene Themen kann anschließend `lxml` eingeführt werden.
 
 ---
 
-## 11. Einfache Python-Beispiele
+## 9. Einfache Python-Beispiele
 
-### 11.1 Beispiel-XML-Datei
+### 9.1 Beispiel-XML-Datei
 
 Speichern Sie die folgende Datei unter dem Namen:
 
@@ -678,7 +674,7 @@ Inhalt:
 </artikel>
 ```
 
-### 11.2 XML-Datei mit Python einlesen
+### 9.2 XML-Datei mit Python einlesen
 
 ```python
 import xml.etree.ElementTree as ET
@@ -721,7 +717,7 @@ print(wurzel.tag)
 
 Der Name des Wurzelelements wird ausgegeben.
 
-### 11.3 Alle Produkte ausgeben
+### 9.3 Alle Produkte ausgeben
 
 ```python
 import xml.etree.ElementTree as ET
@@ -764,7 +760,7 @@ preis = produkt.find("preis").text
 
 Der Preis wird ausgelesen.
 
-### 11.4 Attribute auslesen
+### 9.4 Attribute auslesen
 
 ```python
 import xml.etree.ElementTree as ET
@@ -795,7 +791,7 @@ produkt.get("artikelnummer")
 
 wird das Attribut `artikelnummer` ausgelesen.
 
-### 11.5 Zahlenwerte verarbeiten
+### 9.5 Zahlenwerte verarbeiten
 
 XML speichert Inhalte zunächst als Text. Wenn mit Zahlen gerechnet werden soll, müssen sie umgewandelt werden.
 
@@ -837,7 +833,7 @@ int(...)
 
 wandelt einen Text in eine ganze Zahl um.
 
-### 11.6 XML-Daten verändern
+### 9.6 XML-Daten verändern
 
 Im nächsten Beispiel wird der Preis eines Produkts verändert.
 
@@ -863,7 +859,7 @@ Dieses Programm:
 3. ändert den Preis,
 4. schreibt eine neue Datei `produkte_geaendert.xml`.
 
-### 11.7 Neue XML-Datei mit Python erzeugen
+### 9.7 Neue XML-Datei mit Python erzeugen
 
 ```python
 import xml.etree.ElementTree as ET
@@ -909,7 +905,7 @@ Je nach Python-Version kann die Formatierung etwas anders aussehen. Fachlich ist
 
 ---
 
-## 12. Typische Fehler beim Arbeiten mit XML
+## 10. Typische Fehler beim Arbeiten mit XML
 
 ### Fehler 1: Datei nicht gefunden
 
@@ -974,7 +970,7 @@ except ValueError:
 
 ---
 
-## 13. Kurzer Einblick: XML und XPath
+## 11. Kurzer Einblick: XML und XPath
 
 XPath ist eine Sprache, mit der gezielt Elemente in XML-Dokumenten gesucht werden können.
 
@@ -1006,7 +1002,7 @@ XPath ist besonders nützlich, wenn XML-Dateien tief verschachtelt sind.
 
 ---
 
-## 14. Übungsaufgaben
+## 12. Übungsaufgaben
 
 ### Aufgabe 1: XML lesen
 
@@ -1187,7 +1183,7 @@ Begründen Sie Ihre Entscheidung kurz.
 
 ---
 
-## 15. Musterlösungen zu ausgewählten Aufgaben
+## 13. Musterlösungen zu ausgewählten Aufgaben
 
 ### Musterlösung zu Aufgabe 1
 
@@ -1279,7 +1275,7 @@ baum.write("personen_neu.xml", encoding="UTF-8", xml_declaration=True)
 
 ---
 
-## 16. Didaktischer Vorschlag für die Vorlesung
+## 14. Didaktischer Vorschlag für die Vorlesung
 
 Eine mögliche Reihenfolge für eine 90-minütige Einheit wäre:
 
@@ -1302,7 +1298,7 @@ Für eine vertiefende zweite Einheit können folgende Themen ergänzt werden:
 
 ---
 
-## 17. Zusammenfassung
+## 15. Zusammenfassung
 
 XML ist eine Auszeichnungssprache zur strukturierten Darstellung von Daten. Eine XML-Datei besteht aus Elementen, Attributen und Textinhalten. Damit eine XML-Datei korrekt verarbeitet werden kann, muss sie wohlgeformt sein. Schemata wie DTD oder XSD können zusätzlich festlegen, welche Struktur und welche Datentypen erlaubt sind.
 
